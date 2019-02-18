@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  cf-heroku-keys
+
+  Allows a Heroku app's AWS keys to be automatically created and updated from CloudFormation.
+
+Globals:
+  Function:
+    Timeout: 10
+
+Parameters:
+  HerokuApiKey:
+    Description: The API keys to use for making configuration updates to Heroku apps
+    Type: String
+
+Resources:
+  CFHerokuKeysFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: lib/
+      Handler: app.lambda_handler
+      Runtime: ruby2.5
+      Environment:
+        Variables:
+          HEROKU_API_KEY: !Ref HerokuApiKey
+
+Outputs:
+  FunctionArn:
+    Description: "Lambda function ARN for use in other CloudFormation stacks"
+    Value: !GetAtt CFHerokuKeysFunction.Arn
