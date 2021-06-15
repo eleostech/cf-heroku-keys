@@ -20,7 +20,7 @@ Resources:
     Properties:
       CodeUri: lib/
       Handler: app.lambda_handler
-      Runtime: ruby2.5
+      Runtime: ruby2.7
       Environment:
         Variables:
           HEROKU_API_KEY: !Ref HerokuApiKey

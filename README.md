@@ -36,7 +36,7 @@ Resources:
 * AWS CLI installed
 * `pip install --user aws-sam-cli`
 * On Debian: `sudo apt install python-backports.ssl-match-hostname python-backports.functools-lru-cache`
-* [Ruby 2.5 installed](https://www.ruby-lang.org/en/documentation/installation/)
+* [Ruby version matching .ruby-version installed](https://www.ruby-lang.org/en/documentation/installation/)
 * [Docker installed](https://www.docker.com/community-edition)
 * `cp sample.env.json env.json` and plug in your Heroku API key (which you can generate as in `Deployment` below, or steal from `~/.netrc` if you're in a rush.)
 
